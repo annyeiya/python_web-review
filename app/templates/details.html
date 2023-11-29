@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{details[0]}}</title>
+    <style>
+        html{background-color:black}
+        body{display: flex; align-items: flex-start;justify-content: center;}
+        div{width: 600px; margin: 0 20px;
+            background-color: rgb(204, 252, 252);; color: black;}
+        p{padding: 10px 0; text-align: center;}
+        button{position: absolute; background-color:rgb(204, 252, 252);}
+        hr{color:black; height: 5px;}
+        img {display: block; width: 309px; height: auto; margin-bottom:20px;}
+    </style>
+</head>
+<body>
+    <img src="{{details[5]}}">
+    <div>
+        <p style="font-size:25px">Имя: <br>{{ details[0] }}</p>
+        <hr>
+        <p style="font-size:20px">Год: <br>{{ details[1] }}</p>
+        <hr>
+        <p style="font-size:20px">Жанры: <br>{{ details[2] }}</p>
+        <hr>
+        <p style="font-size:15px">Описание: <br>{{ details[4] }}</p>
+        <a href="{{ details[3] }}" >
+            <button style="width:600px; height:70px;">
+                <span><em>Ссылка</em></span> 
+            </button>
+        </a>
+    </div>
+</body>
+</html>
