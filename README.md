@@ -1,6 +1,6 @@
 # python_web-review
 
-- проект пока что лежит в ветки web-review т.к. это MVP
+- проект пока что лежит в ветки mvp-review т.к. это MVP
 - проект выполняет скрапинг сайта: https://animestars.org
 - поднятие: bash build.sh
 - после остановки нужно выполнить: docker-compose down
