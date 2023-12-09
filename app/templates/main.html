@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>список анимэ</title>
+    <style>
+        h1{font-size: 45px; text-align: center;}
+        body{background-color: black; color: rgb(204, 252, 252);}
+        button{background-color:rgb(204, 252, 252);}
+        img {display: block; width: 100%; height: auto;}
+    </style>
+</head>
+<body>
+    <h1>Список аниме</h1>
+    {% for row in data %}
+        <a href="/{{ row[0] }}" >
+            <button style="width:150px; height:270px;">
+                <img src="{{row[2]}}"> 
+                <span>{{ row[1] }}</span> 
+            </button>
+        </a>
+    {% endfor %}
+</body>
+</html>
