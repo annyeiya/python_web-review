@@ -6,10 +6,11 @@ RUN pip install --upgrade pip
 
 RUN mkdir mycode
 COPY app mycode
+COPY config.py mycode
 RUN ls -l
 
 WORKDIR /mycode
 
-RUN pip install flask
+RUN pip install -r requirements.txt
 
 CMD python3 server.py

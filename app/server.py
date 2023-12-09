@@ -2,28 +2,30 @@ import flask
 from flask import Flask, Response, render_template
 import sqlite3
 from time import sleep
+from config import base_path
 
-sleep(45)
+sleep(20)
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def start():
-    db = sqlite3.connect('/base/base.db')
-    cur = db.cursor()
-    cur.execute('SELECT id, title, image FROM anime')
-    data = cur.fetchall()
-    db.close()
+    with sqlite3.connect(base_path) as db:
+        cur = db.cursor()
+        cur.execute('''SELECT id, title, image FROM anime 
+                    ORDER BY num DESC''')
+        data = cur.fetchall()
+
     return render_template('main.html', data=data)
     
 @app.route('/<int:id>', methods=['GET'])
 def display_details(id):
-    db = sqlite3.connect('/base/base.db')
-    cur = db.cursor()
-    cur.execute('''SELECT title, year, genre, links, descriptions, image
-                 FROM anime WHERE id=?''', (id,))
-    details = cur.fetchone()
-    db.close()
+    with sqlite3.connect(base_path) as db:
+        cur = db.cursor()
+        cur.execute('''SELECT title, year, genre, links, descriptions, image
+                    FROM anime WHERE id=?''', (id,))
+        details = cur.fetchone()
+
     return render_template('details.html', details=details)
 
 
