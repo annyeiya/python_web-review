@@ -11,13 +11,6 @@ def add_anime(num, title, year, genre, links, descriptions, image):
 
         db.commit()
 
-# def anime_reverse():
-#     with sqlite3.connect(base_path) as db:
-#         cur = db.cursor()
-#         cur.execute('''SELECT * FROM anime ORDER BY num DESC''')
-
-#         db.commit()
-
 def update_anime(title, year, genre, links, descriptions, image, id):
     with sqlite3.connect(base_path) as db:
         cur = db.cursor()
