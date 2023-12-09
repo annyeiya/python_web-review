@@ -6,12 +6,12 @@ RUN pip install --upgrade pip
 
 RUN mkdir mycode
 COPY scraper mycode
+COPY config.py mycode
+COPY /base/run_num.txt mycode
 RUN ls -l
 
 WORKDIR /mycode
 
-RUN pip install bs4
-RUN pip install lxml
-RUN pip install requests
+RUN pip install -r requirements.txt
 
 CMD bash run_scripts.sh

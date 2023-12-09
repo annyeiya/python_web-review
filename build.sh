@@ -2,6 +2,7 @@
 
 cd base
 python3 base_cr.py
-cd .
+python3 run_num_upd.py
+cd ..
 docker-compose build
 docker-compose up

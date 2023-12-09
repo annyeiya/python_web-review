@@ -7,7 +7,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./base:/base
+      - ./base/base.db:/base/base.db
 
   server:
     container_name: flask
@@ -16,7 +16,7 @@ services:
     ports:
       - 8000:8000
     volumes:
-      - ./base:/base
+      - ./base/base.db:/base/base.db
     links:
       - scraper
   
