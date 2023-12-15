@@ -1,3 +1,4 @@
+# скрипт для увеличения и запоминания числа запусков проекта 
 with open("run_num.txt", "r") as file:
     number = int(file.read())
 
