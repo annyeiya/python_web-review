@@ -1,3 +1,4 @@
+# скрипт для создания таблицы в базе данных, вызывается в build.sh
 import sqlite3
 
 with sqlite3.connect('base.db') as db:
