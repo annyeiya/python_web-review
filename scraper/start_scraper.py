@@ -1,3 +1,6 @@
+''' выполняет скрапинг страницы номер которой сответсвует номеру запуска проект (файл base/run_num.txt)
+и вызывает функцию для записи новых данных в базу данных '''
+
 from bs4 import BeautifulSoup
 from lxml import etree
 from io import StringIO, BytesIO
