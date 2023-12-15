@@ -1,3 +1,4 @@
+# скрипт для отчистки базы данных и обнуления числа запусков проекта 
 import sqlite3
 
 with sqlite3.connect('base.db') as db:
