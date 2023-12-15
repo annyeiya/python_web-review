@@ -1,3 +1,6 @@
+''' раз в 3 минуты выполняет скрапинг одной рандомно выбранной страницы
+вызывает функцию для обновления последних данных в базе '''
+
 from bs4 import BeautifulSoup
 from lxml import etree
 from io import StringIO, BytesIO
