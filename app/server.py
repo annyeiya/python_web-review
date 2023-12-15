@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def start():
+    ''' начальная страница, 
+    выводит названия и картинки всех аниме из базы '''
     with sqlite3.connect(base_path) as db:
         cur = db.cursor()
         cur.execute('''SELECT id, title, image FROM anime 
@@ -20,6 +22,7 @@ def start():
     
 @app.route('/<int:id>', methods=['GET'])
 def display_details(id):
+    ''' страницы с подробной информацие о выбранном анимэ '''
     with sqlite3.connect(base_path) as db:
         cur = db.cursor()
         cur.execute('''SELECT title, year, genre, links, descriptions, image
